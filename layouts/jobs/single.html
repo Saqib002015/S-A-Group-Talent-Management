@@ -24,14 +24,14 @@
 				{{ if .Params.locations }}
 					<p>Job location:
 						{{ range (.GetTerms "locations")}}
-							<a href="{{ .Permalink }}" class="w3-tag w3-theme w3-round">{{ .LinkTitle}}</a>
+							<a href="{{ .RelPermalink }}" class="w3-tag w3-theme w3-round">{{ .LinkTitle}}</a>
 						{{end}}
 					</p>
 				{{ end }}
 				{{ if .Params.qualifications }}
 					<p>Qualilfication:
 						{{ range (.GetTerms "qualifications")}}
-							<a href="{{ .Permalink }}" class="w3-tag w3-theme w3-round">{{ .LinkTitle}}</a>
+							<a href="{{ .RelPermalink }}" class="w3-tag w3-theme w3-round">{{ .LinkTitle}}</a>
 						{{end}}
 					</p>
 				{{ end }}
