@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+		<meta property="og:site_name" content="S.A. GROUP TALENT MANAGEMENT" />
+		<meta property="og:title" content="S.A. GROUP TALENT MANAGEMENT" />
+		<meta property="og:description" content="::  Make you Carrier with us  ::" />
+		<meta property="og:image" content="https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/iccs-ltd.png" />
+		<meta property="og:image" content="https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/logo-2.jpg" />
+		<meta property="og:url" content="https://sagrouptalentmanagement.weebly.com/" />
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+		<meta charset="UTF-8">
+		<title>{{.Title}}</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+		<style>
+			*, h1 { font-family: 'Montserrat', sans-serif; }
+
+			/* The hero image */
+			.hero-image {
+				/* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
+				background-image: linear-gradient(rgba(63, 81, 181, 1), rgba(63, 81, 181, 0.3)), url("https://i.postimg.cc/fTFK9VKh/minh-pham-Iis-DPFNUS4k-unsplash.jpg");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+				display: block;
+				height: 500px;
+			}
+			.hero-text {
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+			}
+			.content {
+				max-width: 900px;
+				margin: 32px auto;
+			}
+			.job-list .w3-card {
+				padding: 26px 32px 32px 32px;
+			}
+			.companies {
+				margin-top: 42px;
+			}
+			.companies .w3-card {
+				height: 220px;
+				overflow: hidden;
+				border-radius: 0.6em;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+			}
+			footer {
+				padding-bottom: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- hero banner -->
+		<div class="hero-image">
+			<div class="hero-text">
+				<p>Looking for job that will help you to make your career</p>
+				<h1>Job for you</h1>
+				<a href="/jobs/" class="w3-button w3-round w3-xlarge w3-theme">Find JOBS</a>
+			</div>
+		</div>
+
+		<div class="w3-container content">
+			<div class="job-list">
+				<div class="w3-display-container">
+					<h1>Openings</h1>
+					<a href="/jobs/" class="w3-btn w3-circle w3-xlarge w3-theme w3-display-right"><span class="fa fa-arrow-right"></span></a>
+				</div>
+				{{ range .Paginator.Pages }}
+				<div class="w3-card w3-border w3-round-large w3-container w3-margin">
+					<div class="w3-display-container">
+						<div class="w3-xlarge">{{.Title}}</div>
+						<a href="{{.URL}}" class="w3-btn w3-round w3-theme w3-display-right">Apply</a>
+					</div>
+					<div class="w3-section"></div>
+					<div class="w3-row">
+						{{ if .Params.expires }}
+							<div class="w3-col s6 m3 w3-small">
+								<div>
+									<span class="fa fa-calendar-day"></span>
+									{{ range (.GetTerms "expires")}}
+										<a href="{{ .URL }}" class="w3-tag w3-round">{{ dateFormat "Jan 06" .LinkTitle}}</a>
+									{{end}}
+								</div>
+							</div>
+						{{ end }}
+						{{ if .Params.locations }}
+							<div class="w3-col s6 m3 w3-small">
+								<div>
+									<span class="fa fa-map-marker-alt"></span>
+									{{ range (.GetTerms "locations")}}
+										<a href="{{ .URL }}" class="w3-tag w3-round">{{ .LinkTitle}}</a>
+									{{end}}
+								</div>
+							</div>
+						{{ end }}
+						{{ if .Params.salaries }}
+							<div class="w3-col s6 m3 w3-small">
+								<div>
+									<span class="fa fa-rupee-sign"></span>
+									{{ range (.GetTerms "salaries")}}
+										<a href="{{ .URL }}" class="w3-tag w3-round">{{ .LinkTitle}}</a>
+									{{end}}
+								</div>
+							</div>
+						{{ end }}
+					</div>
+				</div>
+				{{ end }}
+			</div>
+			<div class="companies">
+				<div class="w3-display-container">
+					<h1>Our Valuable Clients</h1>
+				</div>
+				<div class="w3-row">
+					<div class="w3-col s12 m4 w3-container w3-padding-16">
+						<div class="w3-card" style="background-image: url(https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/iccs-ltd_orig.png)">
+							<div class="w3-container w3-padding-16 w3-theme w3-small">ICCS BPO LTD</div>
+						</div>
+					</div>
+					<div class="w3-col s12 m4 w3-container w3-padding-16">
+						<div class="w3-card" style="background-image: url(https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/tech-india-solution_orig.jpg)">
+							<div class="w3-container w3-padding-16 w3-theme w3-small">TECH INDIA SOLUTION PVT LTD</div>
+						</div>
+					</div>
+					<div class="w3-col s12 m4 w3-container w3-padding-16">
+						<div class="w3-card" style="background-image: url(https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/karvy_orig.png)">
+							<div class="w3-container w3-padding-16 w3-theme w3-small">KARVY DIGIKONNECT</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="w3-center">
+				<div class="w3-row">
+					<div class="w3-col s12 m4 w3-container w3-padding-16">
+						<div class="w3-large">Easily Apply &amp; Updates</div>
+						<p>Apply with us easily and get latest jobs updates everyday download our Android App <a href="http://bit.ly/2VpJOgm">Click Here</a></p>
+					</div>
+					<div class="w3-col s12 m4 w3-container w3-padding-16">
+						<div class="w3-xlarge">24/7 Live Support</div>
+						<p>Get 24/7  Live Assistance On Jobs/Carrier Updates</p>
+					</div>
+					<div class="w3-col s12 m4 w3-container w3-padding-16">
+						<div class="w3-xlarge">Find Jobs/Employee</div>
+						<span style="color:rgb(84, 84, 84)">
+							We have 5000+ Active Candidates &amp; 10+ Happy Recruiters.
+							Find free jobs or employee all over <strong style="color:rgb(106, 106, 106)">India</strong>.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<footer class="w3-theme">
+			<p class="w3-large w3-center w3-padding-16">S.A. Group Talent Management &copy; 2019 All Right Reserved</p>
+			<div class="w3-row w3-center w3-xxlarge" style="width: 240px; margin: auto;">
+				<div class="w3-col s6">
+					<a href="https://www.facebook.com/sagrouptalentmanagement/"><span class="fab fa-facebook"></span></a>
+				</div>
+				<div class="w3-col s6">
+					<a href="S.A.Group.Talent.Management@gmail.com"><span class="fas fa-at"></span></a>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

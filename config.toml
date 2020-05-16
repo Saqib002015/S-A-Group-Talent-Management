@@ -1,0 +1,12 @@
+baseURL = "http://example.org/"
+languageCode = "en-in"
+title = "Jobkaro"
+paginate = 3
+paginatePath = "jobs"
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  expire = "expires"
+  salary = "salaries"
+  location = "locations"
+  qualification = "qualifications"
