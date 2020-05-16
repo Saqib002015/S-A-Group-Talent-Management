@@ -6,7 +6,5 @@ paginatePath = "jobs"
 [taxonomies]
   category = "categories"
   tag = "tags"
-  expire = "expires"
-  salary = "salaries"
   location = "locations"
   qualification = "qualifications"

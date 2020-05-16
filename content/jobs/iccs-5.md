@@ -3,7 +3,7 @@ title: "Ground Staff"
 date: 2020-05-14T12:50:07+05:30
 draft: false
 expires: 2020-05-25T19:00:07+05:30
-salaries: ["₹ 19,000 - ₹ 35,000"]
+salary: "19,000 - 35,000"
 locations: ["Delhi-NCR"]
 qualifications: [ "Graduation" ]
 ---

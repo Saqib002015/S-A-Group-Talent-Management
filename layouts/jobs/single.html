@@ -1,34 +1,37 @@
 {{ define "main" }}
 	<div class="w3-container w3-padding-16">
 		<div class="w3-card w3-round" style="max-width: 800px; margin: auto;">
-			<h2 class="w3-container">{{.Title}}</h2>
-			<p class="w3-tiny w3-text-red w3-container"><time datetime="{{.Date}}">{{ dateFormat "Mon, Jan 06'06" .Date}}</time></p>
-			<div class="w3-container w3-topbar w3-bottombar">
-				{{ if .Params.expires }}
-					<p>Expires on:
-						{{ range (.GetTerms "expires")}}
-							<a href="{{ .Permalink }}" class="w3-tag w3-round">{{ dateFormat "Jan 06" .LinkTitle}}</a>
-						{{end}}
-					</p>
+			<button class="w3-button w3-xlarge w3-circle w3-theme" style="transform: translateX(-22px );" onclick="history.back()"><span class="fa fa-arrow-left"></span></button>
+			<div class="w3-display-container">
+				<h4 class="w3-container w3-padding-16">{{.Page.Title}}</h4>
+				{{ if .Params.apply }}
+				<div class="w3-display-right">
+					<a href="{{.Params.apply}}" class="w3-button w3-theme w3-round w3-hide-small w3-margin-right">I'm interested</a>
+				</div>
+				<div class="w3-container w3-hide-medium w3-hide-large">
+					<a href="{{.Params.apply}}" class="w3-button w3-theme w3-round w3-block">I'm interested</a>
+				</div>
 				{{ end }}
-				{{ if .Params.salaries }}
-					<p>Expires on:
-						{{ range (.GetTerms "salaries")}}
-							<a href="{{ .Permalink }}" class="w3-tag w3-round">{{ .LinkTitle}}</a>
-						{{end}}
-					</p>
+			</div>
+			<p class="w3-tiny w3-text-red w3-container"><time datetime="{{.Date}}">{{ dateFormat "Mon, Jan 06'06" .Date}}</time></p>
+			<div class="w3-container w3-border-top w3-border-bottom">
+				{{ if .Params.expires }}
+					<p>Valid till: <b>{{ dateFormat "Jan 06" .Params.expires }}</b></p>
+				{{ end }}
+				{{ if .Params.salary }}
+					<p>Salary: <b>{{ .Params.salary }}</b></p>
 				{{ end }}
 				{{ if .Params.locations }}
-					<p>Expires on:
+					<p>Job location:
 						{{ range (.GetTerms "locations")}}
-							<a href="{{ .Permalink }}" class="w3-tag w3-round">{{ .LinkTitle}}</a>
+							<a href="{{ .Permalink }}" class="w3-tag w3-theme w3-round">{{ .LinkTitle}}</a>
 						{{end}}
 					</p>
 				{{ end }}
 				{{ if .Params.qualifications }}
-					<p>Expires on:
+					<p>Qualilfication:
 						{{ range (.GetTerms "qualifications")}}
-							<a href="{{ .Permalink }}" class="w3-tag w3-round">{{ .LinkTitle}}</a>
+							<a href="{{ .Permalink }}" class="w3-tag w3-theme w3-round">{{ .LinkTitle}}</a>
 						{{end}}
 					</p>
 				{{ end }}

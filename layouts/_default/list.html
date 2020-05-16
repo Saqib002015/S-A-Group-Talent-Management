@@ -1,39 +1,48 @@
 {{ define "main" }}
 	<div class="w3-container w3-padding-16">
 		<h3 style="max-width: 800px; margin: auto;">{{.Title}}</h3>
-		<ul class="w3-ul w3-card w3-round" style="max-width: 800px; margin: auto;">
+		<ul class="w3-ul w3-card w3-round job-list" style="max-width: 800px; margin: auto;">
 			{{ range .Paginator.Pages }}
-				<li class="w3-row">
-					<div class="w3-col s10">{{.Title}}</div>
-					<a href="{{.URL}}" class="w3-button w3-teal w3-small w3-col s2 w3-round material-icons">call_made</a>
-					{{ if .Params.expires }}
-						<p class="w3-tiny w3-col s6">Expires on:
-							{{ range (.GetTerms "expires")}}
-								<a href="{{ .URL }}" class="w3-tag w3-round">{{ dateFormat "Jan 06" .LinkTitle}}</a>
-							{{end}}
-						</p>
-					{{ end }}
-					{{ if .Params.salaries }}
-						<p class="w3-tiny w3-col s6">Salary:
-							{{ range (.GetTerms "salaries")}}
-								<a href="{{ .URL }}" class="w3-tag w3-round">{{ .LinkTitle}}</a>
-							{{end}}
-						</p>
-					{{ end }}
-					{{ if .Params.locations }}
-						<p class="w3-tiny w3-col s12">Locations:
-							{{ range (.GetTerms "locations")}}
-								<a href="{{ .URL }}" class="w3-tag w3-round">{{ .LinkTitle}}</a>
-							{{end}}
-						</p>
-					{{ end }}
-					{{ if .Params.qualifications }}
-						<p class="w3-tiny w3-col s12">Qualifications:
-							{{ range (.GetTerms "qualifications")}}
-								<a href="{{ .URL }}" class="w3-tag w3-round">{{ .LinkTitle}}</a>
-							{{end}}
-						</p>
-					{{ end }}
+				<li>
+					<div class="w3-display-container">
+						<h4>{{.Title}}</h4>
+						<div class="w3-display-right">
+							<a href="{{.RelPermalink}}" class="w3-button w3-theme w3-round w3-hide-small">Apply</a>
+						</div>
+					</div>
+					<div class="w3-row w3-small w3-text-theme">
+						{{ if .Params.salary }}
+							<div class="w3-col s6">
+								<span class="fas fa-rupee-sign"></span>
+								{{ .Params.salary }}
+							</div>
+						{{ end }}
+						{{ if .Params.expires }}
+							<div class="w3-col s6">
+								<span class="fas fa-stopwatch"></span>
+								{{ dateFormat "Jan 06" .Params.expires}}
+							</div>
+						{{ end }}
+						{{ if .Params.locations }}
+							<div class="w3-col s12 m6">
+								<span class="fas fa-globe-asia"></span>
+								{{ range (.GetTerms "locations")}}
+									<a href="{{ .RelPermalink }}" class="w3-tag w3-round w3-theme">{{ .LinkTitle}}</a>
+								{{end}}
+							</div>
+						{{ end }}
+						{{ if .Params.qualifications }}
+							<div class="w3-col s12 m6">
+								<span class="fas fa-graduation-cap"></span>
+								{{ range (.GetTerms "qualifications")}}
+									<a href="{{ .RelPermalink }}" class="w3-tag w3-round w3-theme">{{ .LinkTitle}}</a>
+								{{end}}
+							</div>
+						{{ end }}
+						<div class="w3-col s12">
+							<a href="{{.RelPermalink}}" class="w3-button w3-block w3-theme w3-round w3-hide-medium w3-hide-large">Apply</a>
+						</div>
+					</div>
 				</li>
 			{{ end }}
 		</ul>
@@ -44,7 +53,7 @@
 			<a href="{{.Paginator.Prev.URL}}" class="w3-button">&laquo;</a>
 			{{ end }}
 			{{ range .Paginator.Pagers }}
-			<a href="{{.URL}}" class="w3-button {{ if eq .PageNumber $currentPage}} w3-green {{end}}">{{.PageNumber}}</a>
+			<a href="{{.URL}}" class="w3-button {{ if eq .PageNumber $currentPage}} w3-theme w3-round {{end}}">{{.PageNumber}}</a>
 			{{ end }}
 			{{ if .Paginator.HasNext }}
 			<a href="{{.Paginator.Next.URL}}" class="w3-button w3-right">&raquo;</a>

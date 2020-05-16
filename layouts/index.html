@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-	<html>
-		<head>
+<html>
+	<head>
 		<meta charset="UTF-8">
 		<meta property="og:site_name" content="{{.Title}}" />
 		<meta property="og:title" content="{{.Title}}" />
@@ -12,8 +12,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
 		<title>{{.Title}}</title>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
 		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css" />
@@ -66,7 +66,7 @@
 			<div class="hero-text">
 				<p class="large">Looking for job that will help you to make your career</p>
 				<h1>Job for you</h1>
-				<a href="https://cutt.ly/8yEpWcG" class="w3-button w3-round w3-theme-l5 w3-margin">Post JOBS</a>
+				<a href="https://cutt.ly/8yEpWcG" target="_blank" class="w3-button w3-round w3-theme-l5 w3-margin">Post JOBS</a>
 				<a href="/jobs/" class="w3-button w3-round w3-theme w3-margin">Find JOBS</a>
 			</div>
 		</div>
@@ -75,7 +75,7 @@
 			<div class="hero-text">
 				<p class="w3-small">Looking for job that will help you to make your career</p>
 				<h3>Job for you</h3>
-				<a href="https://cutt.ly/8yEpWcG" class="w3-button w3-round w3-theme-l5 w3-margin">Post JOBS</a>
+				<a href="https://cutt.ly/8yEpWcG" target="_blank" class="w3-button w3-round w3-theme-l5 w3-margin">Post JOBS</a>
 				<a href="/jobs/" class="w3-button w3-round w3-theme w3-margin">Find JOBS</a>
 			</div>
 		</div>
@@ -91,32 +91,25 @@
 				<div class="w3-card w3-border w3-round-large w3-margin">
 					<div class="w3-display-container">
 						<div class="w3-large">{{.Title}}</div>
-						<a href="{{.URL}}" class="w3-btn w3-round w3-theme w3-display-right w3-hide-small">Apply</a>
+						<a href="{{.RelPermalink}}" class="w3-btn w3-round w3-theme w3-display-right w3-hide-small">Apply</a>
 					</div>
 					<div class="w3-section"></div>
 					<div class="w3-row-padding">
-						{{ if .Params.locations }}
+						{{ if .Params.salary }}
 							<div class="w3-col s12 m3 w3-tiny">
-								<div>
-									<span class="fa fa-map-marker-alt"></span>
-									{{ range (.GetTerms "locations")}}
-										<a href="{{ .URL }}" class="w3-tag w3-round">{{ .LinkTitle}}</a>
-									{{end}}
-								</div>
+								<span class="fa fa-rupee-sign"></span> {{ .Params.salary }}
 							</div>
 						{{ end }}
-						{{ if .Params.salaries }}
+						{{ if .Params.locations }}
 							<div class="w3-col s12 m3 w3-tiny">
-								<div>
-									<span class="fa fa-rupee-sign"></span>
-									{{ range (.GetTerms "salaries")}}
-										<a href="{{ .URL }}" class="w3-tag w3-round">{{ .LinkTitle}}</a>
-									{{end}}
-								</div>
+								<span class="fa fa-map-marker-alt"></span>
+								{{ range (.GetTerms "locations")}}
+									<a href="{{ .RelPermalink }}" class="w3-tag w3-theme w3-round">{{ .LinkTitle}}</a>
+								{{end}}
 							</div>
 						{{ end }}
 					</div>
-					<a href="{{.URL}}" class="w3-btn w3-round w3-block w3-theme w3-tiny w3-hide-medium w3-hide-large">Apply</a>
+					<a href="{{.RelPermalink}}" class="w3-btn w3-round w3-block w3-theme w3-tiny w3-hide-medium w3-hide-large">Apply</a>
 				</div>
 				{{ end }}
 			</div>

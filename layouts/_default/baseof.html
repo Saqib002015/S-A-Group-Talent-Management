@@ -2,38 +2,66 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>{{.Title}}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta property="og:site_name" content="{{.Title}}" />
+	<meta property="og:title" content="{{.Title}}" />
+	<meta property="og:description" content=":: Make you Carrier with us ::" />
+	<meta property="og:image" content="https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/iccs-ltd.png" />
+	<meta property="og:image" content="https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/logo-2.jpg" />
+	<meta property="og:url" content="https://sagrouptalentmanagement.weebly.com/" />
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<title>{{.Title}}</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 	<style>
+		*, h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
 		a { text-decoration: none; }
+		.w3-ul.job-list h4 { margin: 4px 0; }
+		.job-list .w3-col {
+			padding: 3px;
+		}
 	</style>
 </head>
 <body>
-	<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
-		<button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
-		<a href="/jobs/" class="w3-bar-item w3-button">Jobs</a>
-		{{ $currentPage := .URL }}
-		{{ range .Site.Menus.homepagelink }}
-		<a href="{{.URL}}" class="w3-bar-item w3-button {{ if eq $currentPage .URL}} w3-green {{ end }}">{{.Title}}</a>
-		{{ end }}
-	</div>
-	<div class="w3-blue w3-large w3-card">
-		<button class="w3-btn w3-xxlarge material-icons" onclick="w3_open()">menu</button>
+	<div class="w3-theme w3-large w3-card">
+		<a href="/" class="w3-btn w3-xxlarge"><span class="fa fa-home"></span></a>
 	</div>
 	{{ block "main" .}}
 
 	{{ end }}
-
-<script>
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-}
-
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-</script>
+	<!-- footer -->
+	<footer class="w3-row-padding w3-theme-l1" style="padding: 32px;">
+		<div class="w3-col s12 m6 w3-container" style="display: flex;justify-content: center; align-items: center;">
+			<div>
+				<h4>S.A. Group Talent Management</h4>
+				<p class="w3-text-theme-l5">
+					Plot No-2, Near Bharat Gas Agency <br>Hapur - Modinagar Rd, Shastri Nagar <br>Modinagar, India-201204
+				</p>
+				<p class="w3-tiny">&copy; 2019 All Right Reserved</p>
+			</div>
+		</div>
+		<div class="w3-col s12 m6 w3-container" style="display: flex;justify-content: center; align-items: center;">
+			<div style="min-width: 300px;">
+				<h3>Get job alerts</h3>
+				<form action="#">
+					<div class="w3-display-container">
+						<input type="text" class="w3-input w3-border w3-round" placeholder="Enter your email" />
+						<button style="margin-right: 8px;" class="w3-display-right w3-tiny w3-button w3-round w3-theme">Subscribe</button>
+					</div>
+				</form>
+				<div class="w3-section"></div>
+				<div class="w3-xxlarge">
+					<a href="https://www.facebook.com/sagrouptalentmanagement/" alt="Like us at Facebook"><span class="fab fa-facebook"></span></a>
+					<a href="mailto:S.A.Group.Talent.Management@gmail.com" alt="Mail us"><span class="fas fa-at"></span></a>
+					<a href="http://bit.ly/2VpJOgm" alt="Download our App"><span class="fab fa-android"></span></a>
+				</div>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>
