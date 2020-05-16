@@ -1,7 +1,7 @@
 baseURL = "http://example.org/"
 languageCode = "en-in"
 title = "Jobkaro"
-paginate = 3
+paginate = 5
 paginatePath = "jobs"
 [taxonomies]
   category = "categories"
