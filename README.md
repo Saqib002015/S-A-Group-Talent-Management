@@ -7,6 +7,7 @@ This is a testing website for a job portal. User can search job available nearby
 
 https://jobkaro.netlify.app
 
+
 _This app is created using static website builder **HUGO & Netlify API**_
 
 #### Used Netlify API
