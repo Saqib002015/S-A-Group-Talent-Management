@@ -1,6 +1,6 @@
-baseURL = ""
+baseURL = "https://sagrouptalentmanagement.in/"
 languageCode = "en-in"
-title = "Jobkaro"
+title = "S A Group Talent Management"
 paginate = 5
 paginatePath = "jobs"
 [taxonomies]
