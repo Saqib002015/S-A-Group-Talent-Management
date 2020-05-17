@@ -1,9 +1,13 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+description: "{{ replace .Name "-" " " | title }}"
 draft: true
+date: {{ .Date }}
 expires: {{ .Date }}
-salaries: "₹ 10,000 - ₹ 15,000"
-locations: "Delhi-NCR"
-qualifications: ["10th, 12th"]
+salary: "₹ 10,000 - ₹ 15,000"
+locations: ["Delhi-NCR"]
+qualifications: ["10th", "12th"]
+categories: ["BPO", "Data Entry"]
+apply: "mailto:{{.Site.Params.email}}"
+jobId: "1234"
 ---

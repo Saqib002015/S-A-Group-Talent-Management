@@ -1,0 +1,30 @@
+<footer class="w3-row-padding w3-theme-l1" style="padding: 32px;">
+	<div class="w3-col s12 m6 w3-container" style="display: flex;justify-content: center; align-items: center;">
+		<div style="min-width: 300px;">
+			<h3>Get job alerts</h3>
+			<form action="#">
+				<div class="w3-display-container">
+					<input type="text" class="w3-input w3-border w3-round" placeholder="Enter your email" />
+					<button style="margin-right: 8px;" class="w3-display-right w3-tiny w3-button w3-round w3-theme">Subscribe</button>
+				</div>
+			</form>
+			<div class="w3-section"></div>
+			<div class="w3-xxlarge">
+				<a href="{{.Site.Params.facebook}}"><span class="fab fa-facebook"></span></a>
+				<a href="{{.Site.Params.messenger}}"><span class="fab fa-facebook-messenger"></span></a>
+				<a href="{{.Site.Params.whatsapp}}"><span class="fab fa-whatsapp"></span></a>
+				<a href="mailto:{{.Site.Params.email}}" alt="Mail us"><span class="fas fa-envelope-open-text"></span></a>
+				<a href="{{.Site.Params.googleplay}}"><span class="fab fa-google-play"></span></a>
+			</div>
+		</div>
+	</div>
+	<div class="w3-col s12 m6 w3-container" style="display: flex;justify-content: center; align-items: center;">
+		<div>
+			<h4>{{.Site.Title}}</h4>
+			<p class="w3-text-theme-l5" style="max-width: 280px;">
+				{{.Site.Params.address}}
+			</p>
+			<a href="{{.Site.Params.postJobForm}}" class="w3-button w3-round w3-theme-d5 w3-block">Post free JOB</a>
+		</div>
+	</div>
+</footer>

@@ -1,30 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<meta property="og:site_name" content="{{.Title}}" />
-		<meta property="og:title" content="{{.Title}}" />
-		<meta property="og:description" content="::  Make you Carrier with us  ::" />
-		<meta property="og:image" content="https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/iccs-ltd.png" />
-		<meta property="og:image" content="https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/logo-2.jpg" />
-		<meta property="og:url" content="https://sagrouptalentmanagement.weebly.com/" />
-
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<title>{{.Title}}</title>
-		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
-		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css" />
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+		{{ partial "head.html" . }}
 		<style>
 			*, h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
 
 			/* The hero image */
 			.hero-image {
 				/* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
-				background-image: linear-gradient(rgba(63, 81, 181, 1), rgba(63, 81, 181, 0.3)), url("https://i.postimg.cc/fTFK9VKh/minh-pham-Iis-DPFNUS4k-unsplash.jpg");
+				background-image: linear-gradient(rgba(63, 81, 181, 1), rgba(63, 81, 181, 0.3)), url("{{.Site.Params.coverImage}}");
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: cover;
@@ -66,8 +50,8 @@
 			<div class="hero-text">
 				<p class="large">Looking for job that will help you to make your career</p>
 				<h1>Job for you</h1>
-				<a href="https://cutt.ly/8yEpWcG" target="_blank" class="w3-button w3-round w3-theme-l5 w3-margin">Post JOBS</a>
-				<a href="/jobs/" class="w3-button w3-round w3-theme w3-margin">Find JOBS</a>
+				<a href="{{.Site.Params.postJobForm}}" target="_blank" class="w3-button w3-round w3-theme-l4 w3-margin w3-xlarge">Post JOBS</a>
+				<a href="/jobs/" class="w3-button w3-round w3-theme w3-margin w3-xlarge">Find JOBS</a>
 			</div>
 		</div>
 		<!-- hero banner for tablet & computer -->
@@ -75,7 +59,7 @@
 			<div class="hero-text">
 				<p class="w3-small">Looking for job that will help you to make your career</p>
 				<h3>Job for you</h3>
-				<a href="https://cutt.ly/8yEpWcG" target="_blank" class="w3-button w3-round w3-theme-l5 w3-margin">Post JOBS</a>
+				<a href="{{.Site.Params.postJobForm}}" target="_blank" class="w3-button w3-round w3-theme-l5 w3-margin">Post JOBS</a>
 				<a href="/jobs/" class="w3-button w3-round w3-theme w3-margin">Find JOBS</a>
 			</div>
 		</div>
@@ -160,34 +144,7 @@
 			</div>
 		</div>
 
-		<!-- footer -->
-		<footer class="w3-row-padding w3-theme-l1" style="padding: 32px;">
-			<div class="w3-col s12 m6 w3-container" style="display: flex;justify-content: center; align-items: center;">
-				<div>
-					<h4>S.A. Group Talent Management</h4>
-					<p class="w3-text-theme-l5">
-						Plot No-2, Near Bharat Gas Agency <br>Hapur - Modinagar Rd, Shastri Nagar <br>Modinagar, India-201204
-					</p>
-					<p class="w3-tiny">&copy; 2019 All Right Reserved</p>
-				</div>
-			</div>
-			<div class="w3-col s12 m6 w3-container" style="display: flex;justify-content: center; align-items: center;">
-				<div style="min-width: 300px;">
-					<h3>Get job alerts</h3>
-					<form action="#">
-						<div class="w3-display-container">
-							<input type="text" class="w3-input w3-border w3-round" placeholder="Enter your email" />
-							<button style="margin-right: 8px;" class="w3-display-right w3-tiny w3-button w3-round w3-theme">Subscribe</button>
-						</div>
-					</form>
-					<div class="w3-section"></div>
-					<div class="w3-xxlarge">
-						<a href="https://www.facebook.com/sagrouptalentmanagement/" alt="Like us at Facebook"><span class="fab fa-facebook"></span></a>
-						<a href="mailto:S.A.Group.Talent.Management@gmail.com" alt="Mail us"><span class="fas fa-at"></span></a>
-						<a href="http://bit.ly/2VpJOgm" alt="Download our App"><span class="fab fa-android"></span></a>
-					</div>
-				</div>
-			</div>
-		</footer>
+	<!-- footer -->
+	{{ partial "footer.html" . }}
 	</body>
 </html>
