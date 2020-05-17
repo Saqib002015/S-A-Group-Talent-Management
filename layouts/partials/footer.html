@@ -2,12 +2,14 @@
 	<div class="w3-col s12 m6 w3-container" style="display: flex;justify-content: center; align-items: center;">
 		<div style="min-width: 300px;">
 			<h3>Get job alerts</h3>
-			<form action="#">
+			<form id="mailinglist" action="https://docs.google.com/forms/d/e/1FAIpQLSdGE1JesFuZJwliqzKz4DjvAtZMgOhMYw7fRDSqylPX7omORg/formResponse">
 				<div class="w3-display-container">
-					<input type="text" class="w3-input w3-border w3-round" placeholder="Enter your email" />
+					<input type="hidden" name="usp" value="pp_url" />
+					<input type="email" name="entry.1196241558" class="w3-input w3-border w3-round" autocomplete="email" required="" placeholder="Enter your email" />
 					<button style="margin-right: 8px;" class="w3-display-right w3-tiny w3-button w3-round w3-theme">Subscribe</button>
 				</div>
 			</form>
+			<p id="mailinglisttext"></p>
 			<div class="w3-section"></div>
 			<div class="w3-xxlarge">
 				<a href="{{.Site.Params.facebook}}"><span class="fab fa-facebook"></span></a>
@@ -27,4 +29,33 @@
 			<a href="{{.Site.Params.postJobForm}}" class="w3-button w3-round w3-theme-d5 w3-block">Post free JOB</a>
 		</div>
 	</div>
+	<script>
+		let form = $("#mailinglist");
+		form.on( "keyup", ( e ) => {
+			let val = form.find(".w3-input").val()
+			validateEmail( val );
+		});
+		form.on( "submit", ( e ) => {
+			e.preventDefault();
+			let val = form.find(".w3-input").val()
+			console.log( form.attr( "action" )+"?"+form.serialize() )
+			if( validateEmail( val ) ) {
+				window.open( form.attr( "action" )+"?"+form.serialize() )
+			}
+			return false;
+		});
+		function validateEmail(mail) {
+			if( mail.trim().length == 0 ) {
+				$("#mailinglisttext").empty();
+				return true;
+			}
+			if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+				$("#mailinglisttext").empty();
+				return true;
+			} else {
+				$("#mailinglisttext").text( "Please enter a valid email id" );
+				return false;
+			}
+		}
+	</script>
 </footer>
