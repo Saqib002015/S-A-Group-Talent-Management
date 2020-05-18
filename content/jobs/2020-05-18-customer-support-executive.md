@@ -8,7 +8,6 @@ salary: 10,000 - 20,000
 locations:
   - Delhi
   - Noida
-  - Delhi-NCR
 qualifications:
   - 10th
   - 12th
@@ -17,8 +16,6 @@ categories:
 apply: mailto:S.A.Group.Talent.Management@gmail.com
 jobId: "12345"
 ---
-<!--StartFragment-->
-
 # Job Description
 
 * Candidates who are Freshers/Recent graduates or relevant experience can apply
@@ -26,5 +23,3 @@ jobId: "12345"
 * Possess good communication skills, both oral and written
 * Be familiar with Microsoft applications and working knowledge of MS excel
 * Have a good attitude - should be committed to the work
-
-<!--EndFragment-->
