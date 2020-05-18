@@ -8,7 +8,6 @@ salary: 10,000 - 20,000
 locations:
   - Delhi
   - Noida
-  - Delhi-NCR
 qualifications:
   - 10th
   - 12th
