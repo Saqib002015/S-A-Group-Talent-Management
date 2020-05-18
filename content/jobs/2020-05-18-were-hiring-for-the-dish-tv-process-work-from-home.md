@@ -11,7 +11,7 @@ qualifications:
   - Minimum 12th
 categories:
   - ITES/BPO
-apply: http://bit.ly/2VpJOgm
+apply: S.A.Group.Talent.Management@gmail.com
 jobId: NOI-DISHTV-ICCS
 ---
 Interview on call just in few rounds.
@@ -24,8 +24,7 @@ NOTE: You can join the office after Lockdown as per your convenience.
 
 Fresher & Experience Both can Apply
 
-Process Dish TV inbound  Salary - 10k CTC
-Training 7 days 700/- paid 
+Process Dish TV inbound  Salary - 10k CTC Training 7 days 700/- paid 
 Shift 9:00 AM to 06:00 PM 
 
 After 3 months 10k CTC 8k in hand  And after every 3 months 1500/- Bonus.
@@ -52,7 +51,7 @@ Or you can chat with us on WhatsApp
 
 [https://wa.me/917906094184](https://l.facebook.com/l.php?u=https%3A%2F%2Fwa.me%2F917906094184%3Ffbclid%3DIwAR23Aw3CPNs_laXIj3LhnDx0ahss_mMAgYecfxtQZ4cT3cIjiznm3nGOPfI&h=AT2joB4AS3pxsE7w-FItO-oyCugHj35bl7e-FQi62umxF499Ni4TX83DFgxfmfIH_rHePvyxXZMIB6x03beb8WFI68Ow_wSaQxKmH_n-zpAQhjpQAn8UzS7lLpxv00sLxYs9CLRariYVHti08RPfMPUqoP_ZLBymYfcOb9KShP3xVMQ9bxSZWF03YpG4iL7vW3jkOui4gni3Lc22bBWD393nNGo4hzo0ulPzZ8mtkcFDxSntBjSUa0Abfuv_XmAdhHQeVerMOBAEDq1vI1kn9-iaxYjrK0GfApAmaZdkTqdRPqN5_AubDoPjYXGZqQPEZil2_X1Qwvq7DDAh9BQldjtvaorizlcYGhWT_-m80aIVJudyopfhpckohoSqvw5W3mh81pLVzyUS7FJNyaraLCFndiqp1SJ9VCvLFRnDkAZQ_bphS7IMmVOHoydCiLxrcakxnKJNsyNlKezu3b9YV5InSU9lyJQ1cNtrpC091_l6DSWkEN1Je7NdzhJbtoYwv1dwU5ixzfcgpFN2w3OmQqW5VqdMbowuqpWHen7gDKaFBjIOaTR-badXjGjEW5XYCsFBRH0WbVqbX_yGj3kCirenpJlwY4_4di5mwyhuySfKVllVj-EvVngnO3NGLTQql6gW0LciG16-G6iamAqH8qVP4X2u8PkqaGUwvBUujs1ifg3VRLMw65Wdw7rY4Mk-nid1hS1jUE0QqqhzXYbGBcJ8BdGC4Dwm0Aef8aujaBIfnVRN6FmOvppKOyUejvSn)
 
-For latest jobs update visit [www.sagrouptalentmanagement.in](http://www.sagrouptalentmanagement.in/?fbclid=IwAR2YBGRc0jQKba9v6b6_czOr03-R7ab6g17M6Os4rV8YNnzn7sFM-2t8Pec) and subscribe our newsletter.
+For latest jobs update visit www.sagrouptalentmanagement.in and subscribe our newsletter.
 
 ''Stay Home Save Lives''
 
