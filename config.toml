@@ -2,7 +2,7 @@ baseURL = "https://sagrouptalentmanagement.in/"
 languageCode = "en-in"
 title = "S A Group Talent Management"
 paginate = 5
-paginatePath = "jobs"
+paginatePath = "page"
 [taxonomies]
   category = "categories"
   tag = "tags"

@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+publish_mode: editorial_workflow
+media_folder: "static/files" # Media files will be stored in the repo under images/uploads
+public_folder: "files" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: "jobs" # Used in routes, e.g., /admin/collections/blog
+    label: "Jobs" # Used in the UI
+    folder: "content/jobs" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string", default: "New Job"}
+      - {label: "Description", name: "description", widget: "string", default: "New Job Post"}
+      - {label: "Draft", name: "draft", widget: "hidden", default: false}
+      - {label: "Publish Date", name: "date", widget: "datetime", required: true}
+      - {label: "Expiry Date", name: "expires", widget: "datetime", required: true}
+      - {label: "Salary", name: "salary", widget: "string", required: true}
+      - {label: "Locations", name: "locations", widget: "list", required: true}
+      - {label: "Qualifications", name: "qualifications", widget: "list", required: true}
+      - {label: "Category", name: "categories", widget: "list", required: true}
+      - {label: "Apply link", name: "apply", widget: "string", required: true}
+      - {label: "Job ID", name: "jobId", widget: "string", required: true}
+      - {label: "Body", name: "body", widget: "markdown"}
