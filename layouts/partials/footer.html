@@ -12,7 +12,7 @@
 			<p id="mailinglisttext"></p>
 			<div class="w3-section"></div>
 			<div class="w3-xxlarge">
-				<a href="{{.Site.Params.facebook}}"><span class="fab fa-facebook"></span></a>
+				<a href="{{.Site.Params.facebook}}"><span class="fab fa-facebook-square"></span></a>
 				<a href="{{.Site.Params.messenger}}"><span class="fab fa-facebook-messenger"></span></a>
 				<a href="{{.Site.Params.whatsapp}}"><span class="fab fa-whatsapp"></span></a>
 				<a href="mailto:{{.Site.Params.email}}" alt="Mail us"><span class="fas fa-envelope-open-text"></span></a>
@@ -56,6 +56,14 @@
 				$("#mailinglisttext").text( "Please enter a valid email id" );
 				return false;
 			}
+		}
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker.register("/sw.js")
+				.then(function (registration) {
+					console.log("Service Worker registered with scope:", registration.scope);
+				}).catch(function (err) {
+					console.log("Service worker registration failed:", err);
+				});
 		}
 	</script>
 </footer>

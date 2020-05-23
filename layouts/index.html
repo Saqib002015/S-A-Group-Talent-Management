@@ -81,12 +81,12 @@
 					<div class="w3-row-padding">
 						{{ if .Params.salary }}
 							<div class="w3-col s12 m3 w3-tiny">
-								<span class="fa fa-rupee-sign"></span> {{ .Params.salary }}
+								<span class="fas fa-rupee-sign"></span> {{ .Params.salary }}
 							</div>
 						{{ end }}
 						{{ if .Params.locations }}
 							<div class="w3-col s12 m3 w3-tiny">
-								<span class="fa fa-map-marker-alt"></span>
+								<span class="fas fa-globe-asia"></span>
 								{{ range (.GetTerms "locations")}}
 									<a href="{{ .RelPermalink }}" class="w3-tag w3-theme w3-round">{{ .LinkTitle}}</a>
 								{{end}}
