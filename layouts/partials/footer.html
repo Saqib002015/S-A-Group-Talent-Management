@@ -2,21 +2,21 @@
 	<div class="w3-col s12 m6 w3-container" style="display: flex;justify-content: center; align-items: center;">
 		<div style="min-width: 300px;">
 			<h3>Get job alerts</h3>
-			<form id="mailinglist" action="https://docs.google.com/forms/d/e/1FAIpQLSdGE1JesFuZJwliqzKz4DjvAtZMgOhMYw7fRDSqylPX7omORg/formResponse">
+			<form id="mailinglist" action="{{.Site.Params.Mailing.url}}">
 				<div class="w3-display-container">
 					<input type="hidden" name="usp" value="pp_url" />
-					<input type="email" name="entry.1196241558" class="w3-input w3-border w3-round" autocomplete="email" required="" placeholder="Enter your email" />
+					<input type="email" name="{{.Site.Params.Mailing.name}}" class="w3-input w3-border w3-round" autocomplete="email" required="" placeholder="Enter your email" />
 					<button style="margin-right: 8px;" class="w3-display-right w3-tiny w3-button w3-round w3-theme">Subscribe</button>
 				</div>
 			</form>
 			<p id="mailinglisttext"></p>
 			<div class="w3-section"></div>
 			<div class="w3-xxlarge">
-				<a href="{{.Site.Params.facebook}}"><span class="fab fa-facebook-square"></span></a>
-				<a href="{{.Site.Params.messenger}}"><span class="fab fa-facebook-messenger"></span></a>
-				<a href="{{.Site.Params.whatsapp}}"><span class="fab fa-whatsapp"></span></a>
-				<a href="mailto:{{.Site.Params.email}}" alt="Mail us"><span class="fas fa-envelope-open-text"></span></a>
-				<a href="{{.Site.Params.googleplay}}"><span class="fab fa-google-play"></span></a>
+				<a href="{{.Site.Params.Social.facebook}}" target="_blank"><span class="fab fa-facebook-square"></span></a>
+				<a href="{{.Site.Params.Social.messenger}}" target="_blank"><span class="fab fa-facebook-messenger"></span></a>
+				<a href="{{.Site.Params.Social.whatsapp}}" target="_blank"><span class="fab fa-whatsapp"></span></a>
+				<a href="mailto:{{.Site.Params.Social.email}}" alt="Mail us" target="_blank"><span class="fas fa-envelope-open-text"></span></a>
+				<a href="{{.Site.Params.Social.googleplay}}" target="_blank"><span class="fab fa-google-play"></span></a>
 			</div>
 		</div>
 	</div>
@@ -29,41 +29,5 @@
 			<a href="{{.Site.Params.postJobForm}}" class="w3-button w3-round w3-theme-d5 w3-block">Post free JOB</a>
 		</div>
 	</div>
-	<script>
-		let form = $("#mailinglist");
-		form.on( "keyup", ( e ) => {
-			let val = form.find(".w3-input").val()
-			validateEmail( val );
-		});
-		form.on( "submit", ( e ) => {
-			e.preventDefault();
-			let val = form.find(".w3-input").val()
-			console.log( form.attr( "action" )+"?"+form.serialize() )
-			if( validateEmail( val ) ) {
-				window.open( form.attr( "action" )+"?"+form.serialize() )
-			}
-			return false;
-		});
-		function validateEmail(mail) {
-			if( mail.trim().length == 0 ) {
-				$("#mailinglisttext").empty();
-				return true;
-			}
-			if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
-				$("#mailinglisttext").empty();
-				return true;
-			} else {
-				$("#mailinglisttext").text( "Please enter a valid email id" );
-				return false;
-			}
-		}
-		if ("serviceWorker" in navigator) {
-			navigator.serviceWorker.register("/sw.js")
-				.then(function (registration) {
-					console.log("Service Worker registered with scope:", registration.scope);
-				}).catch(function (err) {
-					console.log("Service worker registration failed:", err);
-				});
-		}
-	</script>
 </footer>
+<script type="text/javascript" src="/basic.js"></script>

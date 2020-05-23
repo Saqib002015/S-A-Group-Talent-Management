@@ -1,0 +1,38 @@
+*, h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+a { text-decoration: none; }
+/* The hero image */
+.hero-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hero-text {
+	text-align: center;
+	color: white;
+}
+.content {
+	max-width: 900px;
+	margin: 32px auto;
+}
+.content>div { margin-top: 32px; }
+.w3-ul.job-list h4 { margin: 4px 0; }
+.job-list .w3-col { padding: 3px; }
+.job-list .w3-card { padding: 26px 32px 32px 32px; }
+.job-list .w3-tag { margin: 6px; }
+.companies .w3-card {
+	height: 220px;
+	overflow: hidden;
+	border-radius: 0.6em;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.job-description a {
+    padding: 1px 5px;
+    background-color: #0000000d;
+    border-radius: 0.5em;
+}
