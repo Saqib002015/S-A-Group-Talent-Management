@@ -5,7 +5,7 @@ This is a testing website for a job portal. User can search job available nearby
 
 **Follow below link to check it out**
 
-https://jobkaro.netlify.app
+https://sagrouptalentmanagement.in/
 
 _This app is created using static website builder_ **HUGO & Netlify API**
 
