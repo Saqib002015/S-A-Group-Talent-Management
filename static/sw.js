@@ -53,7 +53,20 @@ function getFromCache( c, request ) {
 
 function getFromNetwork( c, request ) {
 	return fetch( request ).then( response => {
+		if ( response.status == 404 ) {
+			console.log( "getFromNetwork 404" );
+			return c.match( "404.html" );
+		}
 		c.put( request, response.clone() );
 		return response;
-	}).catch( err => c.match( request ));
+	}).catch( err => {
+		console.log( "getFromNetwork error", err );
+		return c.match( request ).then( r => {
+			console.log( "getFromNetwork error 404", err );
+			if ( r ) {
+				console.log( "getFromNetwork error 404 response is empty", err );
+			}
+			return r || c.match("404.html");
+		});
+	});
 }

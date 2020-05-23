@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{.Site.Title}}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="//fonts.googleapis.com/css?family=Capriola" rel="stylesheet" type="text/css" />
-    <link href="https://www.404pagefree.com/Template-demo/404_page_demo_026/css/style.css" rel="stylesheet" type="text/css"/>
+    {{ partial "head.html" . }}
   </head>
-  <body>
-    <div class="wrap">
+  <body class="w3-theme-l4">
+    <div class="wrap w3-text-theme" style="height: 100vh;display: flex;justify-content: center;align-items: center;text-align: center;">
       <div class="logo">
-        <h1>404</h1>
-        <p> Sorry - File not Found!</p>
-        <div class="sub">
-          <p>
-            <a href="/">Back to Home</a>
-          </p>
-        </div>
+        <h1 style="font-size: 120px;" class="fas fa-exclamation-triangle"></h1>
+        <h1 style="font-size: 80px;">Uh! Oh.</h1>
+          <div class="w3-section"></div>
+            <p>
+              <a href="/" class="w3-btn w3-xlarge w3-theme w3-round-large">Back to Home</a>
+            </p>
+          </div>
       </div>
-    </div>
   </body>
 </html>
