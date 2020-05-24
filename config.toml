@@ -26,3 +26,15 @@ paginatePath = "page"
 	[params.theme]
 		opaque = "#3f51b5"
 		translucent = "#3f51b54d"
+	[[params.clients]]
+		title = "ICCS BPO LTD"
+		image = "https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/iccs-ltd_orig.png"
+	[[params.clients]]
+		title = "TECH INDIA SOLUTION PVT LTD"
+		image = "https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/tech-india-solution_orig.jpg"
+	[[params.clients]]
+		title = "KARVY DIGIKONNECT"
+		image = "https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/karvy_orig.png"
+	[[params.clients]]
+		title = "Easy Policy"
+		image = "https://i.postimg.cc/0286720k/SAHFF-Nv-400x400.png"

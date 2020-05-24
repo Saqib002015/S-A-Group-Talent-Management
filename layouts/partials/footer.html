@@ -1,5 +1,14 @@
 <footer class="w3-row-padding w3-theme-l1" style="padding: 32px;">
 	<div class="w3-col s12 m6 w3-container" style="display: flex;justify-content: center; align-items: center;">
+		<div>
+			<h4>{{.Site.Title}}</h4>
+			<p class="w3-text-theme-l5" style="max-width: 280px;">
+				{{.Site.Params.address}}
+			</p>
+			<a href="{{.Site.Params.postJobForm}}" class="w3-button w3-round w3-theme-d5 w3-block">Post free JOB</a>
+		</div>
+	</div>
+	<div class="w3-col s12 m6 w3-container" style="display: flex;justify-content: center; align-items: center;">
 		<div style="min-width: 300px;">
 			<h3>Get job alerts</h3>
 			<form id="mailinglist" action="{{.Site.Params.Mailing.url}}">
@@ -18,15 +27,6 @@
 				<a href="mailto:{{.Site.Params.Social.email}}" alt="Mail us" target="_blank"><span class="fas fa-envelope-open-text"></span></a>
 				<a href="{{.Site.Params.Social.googleplay}}" target="_blank"><span class="fab fa-google-play"></span></a>
 			</div>
-		</div>
-	</div>
-	<div class="w3-col s12 m6 w3-container" style="display: flex;justify-content: center; align-items: center;">
-		<div>
-			<h4>{{.Site.Title}}</h4>
-			<p class="w3-text-theme-l5" style="max-width: 280px;">
-				{{.Site.Params.address}}
-			</p>
-			<a href="{{.Site.Params.postJobForm}}" class="w3-button w3-round w3-theme-d5 w3-block">Post free JOB</a>
 		</div>
 	</div>
 </footer>

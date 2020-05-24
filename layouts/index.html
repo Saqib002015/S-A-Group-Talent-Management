@@ -25,6 +25,8 @@
 
 		<!-- contents -->
 		<div class="w3-container content">
+
+			<!-- Job list -->
 			<div class="job-list">
 				<div class="w3-display-container">
 					<h1>Openings</h1>
@@ -56,31 +58,25 @@
 				</div>
 				{{ end }}
 			</div>
+
+			<!-- Client List -->
 			<div class="companies">
 				<div class="w3-display-container">
 					<h1>Our Valuable Clients</h1>
 				</div>
-				<div class="w3-row-padding">
-					<div class="w3-col s12 m4 w3-container w3-padding-16">
-						<div class="w3-card" style="background-image: url(https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/iccs-ltd_orig.png)">
-							<div class="w3-container w3-padding-16 w3-theme w3-small">ICCS BPO LTD</div>
+				<div class="swiper-container" style="height: 252px;">
+					<div class="swiper-wrapper">
+					{{ range .Site.Params.clients }}
+						<div class="swiper-slide">
+							<div class="w3-container w3-padding-16">
+								<div class="w3-card" style="background-image: url({{.image}})">
+									<div class="w3-container w3-theme-d1 w3-small"><p>{{upper .title}}</p></div>
+								</div>
+							</div>
 						</div>
+					{{ end }}
 					</div>
-					<div class="w3-col s12 m4 w3-container w3-padding-16">
-						<div class="w3-card" style="background-image: url(https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/tech-india-solution_orig.jpg)">
-							<div class="w3-container w3-padding-16 w3-theme w3-small">TECH INDIA SOLUTION PVT LTD</div>
-						</div>
-					</div>
-					<div class="w3-col s12 m4 w3-container w3-padding-16">
-						<div class="w3-card" style="background-image: url(https://sagrouptalentmanagement.weebly.com/uploads/4/5/7/1/45714543/karvy_orig.png)">
-							<div class="w3-container w3-padding-16 w3-theme w3-small">KARVY DIGIKONNECT</div>
-						</div>
-					</div>
-					<div class="w3-col s12 m4 w3-container w3-padding-16">
-						<div class="w3-card" style="background-image: url(https://pbs.twimg.com/profile_images/654536088862638081/SAHFF_Nv_400x400.png)">
-							<div class="w3-container w3-padding-16 w3-theme w3-small">Easy Policy</div>
-						</div>
-					</div>
+					<div class="swiper-pagination"></div>
 				</div>
 			</div>
 			<div class="core-values">
@@ -108,6 +104,36 @@
 				</div>
 			</div>
 		</div>
+
+<script>
+	$(document).ready(function () {
+	  var mySwiper = new Swiper ('.swiper-container', {
+	    loop: true,
+	    updateOnWindowResize: true,
+		breakpoints: {
+			320: {
+				slidesPerView: 1
+			},
+			480: {
+				slidesPerView: 2
+			},
+			600: {
+				slidesPerView: 3
+			}
+		},
+		speed: 1000,
+		autoplay: {
+			delay: 2000
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'progressbar' //bullets, progressbar, fraction
+		}
+	  });
+	  mySwiper.init();
+	});
+</script>
+
 
 	<!-- footer -->
 	{{ partial "footer.html" . }}
