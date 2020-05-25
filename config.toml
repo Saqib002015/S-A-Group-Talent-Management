@@ -18,7 +18,7 @@ paginatePath = "page"
 		messenger = "https://m.me/sagrouptalentmanagement/"
 		facebook = "https://www.facebook.com/sagrouptalentmanagement/"
 		whatsapp = "https://wa.me/917906094184/?text=Hi,%20I%20found%20this%20from%20website"
-		email = "S.A.Group.Talent.Management@gmail.com"
+		email = "info@sagrouptalentmanagement.in"
 		googleplay = "http://bit.ly/2VpJOgm"
 	[params.mailing]
 		url = "https://docs.google.com/forms/d/e/1FAIpQLSdGE1JesFuZJwliqzKz4DjvAtZMgOhMYw7fRDSqylPX7omORg/formResponse"
