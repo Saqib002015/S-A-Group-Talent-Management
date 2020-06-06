@@ -4,13 +4,111 @@
 	{{ partial "head.html" . }}
 </head>
 <body>
-	<div class="w3-theme w3-large w3-card">
-		<a href="/" class="w3-btn w3-xxlarge"><span class="fa fa-home"></span></a>
-	</div>
+		<!-- Menu for desktop -->
+		<div class="w3-theme">
+			<div class="w3-bar w3-large w3-hide-small desktop-menu" style="max-width: 900px; margin: 0 auto;">
+				<a href="/" class="w3-bar-item w3-button">Home</a>
+				<div class="w3-dropdown-hover">
+					<a href="/services" class="w3-button">Services</a>
+					<div class="w3-dropdown-content w3-bar-block w3-theme w3-card">
+						<a href="/services" class="w3-bar-item w3-button">Services</a>
+						<a href="/jobs" class="w3-bar-item w3-button">Jobs</a>
+					</div>
+				</div>
+				<a href="/about" class="w3-bar-item w3-button">About us</a>
+				<a href="/contact" class="w3-bar-item w3-button">Contact us</a>
+			</div>
+		</div>
+
+		<!-- Menu for mobile -->
+		<!-- Sidebar -->
+		<div class="w3-sidebar w3-animate-left" style="display:none;z-index:5" id="mySidebar">
+			<div style="display: flex; align-items: center; height: 100vh;">
+				<div class="w3-bar-block w3-center" style="width: 100%;">
+					<a href="/jobs" class="w3-bar-item w3-button">Jobs</a>
+					<a href="/services" class="w3-bar-item w3-button">Services</a>
+					<a href="/about" class="w3-bar-item w3-button">About us</a>
+					<a href="/contact" class="w3-bar-item w3-button">Contact us</a>
+				</div>
+			</div>
+		</div>
+		<!-- Page Content -->
+		<div class="w3-overlay w3-animate-opacity" style="cursor:pointer" id="myOverlay"></div>
+
+		<div class="w3-theme">
+			<div class="w3-bar w3-hide-large w3-hide-medium mobile-menu" style="max-width: 900px; margin: 0 auto;">
+				<a href="#" class="w3-bar-item w3-button"><i class="fas fa-bars"></i></a>
+				<a href="/" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+			</div>
+		</div>
+
+		<!-- hero banner for mobile -->
+		<div class="hero-image w3-padding-16 w3-hide-small" style="height: 400px; background-image: linear-gradient({{.Site.Params.theme.opaque}}, {{.Site.Params.theme.translucent}}), url({{.Site.Params.coverImage}});">
+			<div class="hero-text">
+				<p class="large">{{.Site.Params.description}}</p>
+				<h1>{{.Site.Title}}</h1>
+				<a href="{{.Site.Params.postJobForm}}" target="_blank" class="w3-button w3-round w3-theme-l4 w3-margin w3-xlarge">Post JOBS</a>
+				<a href="/jobs/" class="w3-button w3-round w3-theme w3-margin w3-xlarge">Find JOBS</a>
+			</div>
+		</div>
+		<!-- hero banner for tablet & computer -->
+		<div class="hero-image w3-padding-16 w3-hide-large w3-hide-medium" style="background-image: linear-gradient({{.Site.Params.theme.opaque}}, {{.Site.Params.theme.translucent}}), url({{.Site.Params.coverImage}});">
+			<div class="hero-text">
+				<p class="w3-small">{{.Site.Params.description}}</p>
+				<h3>{{.Site.Title}}</h3>
+				<a href="{{.Site.Params.postJobForm}}" target="_blank" class="w3-button w3-round w3-theme-l5 w3-margin">Post JOBS</a>
+				<a href="/jobs/" class="w3-button w3-round w3-theme w3-margin">Find JOBS</a>
+			</div>
+		</div>
+
+		<!-- contents -->
+		<div class="w3-container content">
 	{{ block "main" .}}
 
 	{{ end }}
+		</div>
+
+<script>
+	document.querySelector( ".mobile-menu a:first-child" ).addEventListener( "click", evnt => {
+		evnt.preventDefault();
+		document.querySelector( "#mySidebar" ).style.display = "block";
+		document.querySelector( "#myOverlay" ).style.display = "block";
+	});
+	document.querySelector( "#myOverlay" ).addEventListener( "click", evnt => {
+		evnt.preventDefault();
+		document.querySelector( "#mySidebar" ).style.display = "none";
+		document.querySelector( "#myOverlay" ).style.display = "none";
+	});
+	$(document).ready(function () {
+	  var mySwiper = new Swiper ('.swiper-container', {
+	    loop: true,
+	    updateOnWindowResize: true,
+		breakpoints: {
+			320: {
+				slidesPerView: 1
+			},
+			480: {
+				slidesPerView: 2
+			},
+			600: {
+				slidesPerView: 3
+			}
+		},
+		speed: 1000,
+		autoplay: {
+			delay: 2000
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'progressbar' //bullets, progressbar, fraction
+		}
+	  });
+	  mySwiper.init();
+	});
+</script>
+
+
 	<!-- footer -->
 	{{ partial "footer.html" . }}
-</body>
+	</body>
 </html>

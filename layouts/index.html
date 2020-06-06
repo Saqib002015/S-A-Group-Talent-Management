@@ -1,141 +1,81 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		{{ partial "head.html" . }}
-	</head>
-	<body>
-		<!-- hero banner for mobile -->
-		<div class="hero-image w3-padding-16 w3-hide-small" style="height: 400px; background-image: linear-gradient({{.Site.Params.theme.opaque}}, {{.Site.Params.theme.translucent}}), url({{.Site.Params.coverImage}});">
-			<div class="hero-text">
-				<p class="large">{{.Site.Params.description}}</p>
-				<h1>{{.Site.Title}}</h1>
-				<a href="{{.Site.Params.postJobForm}}" target="_blank" class="w3-button w3-round w3-theme-l4 w3-margin w3-xlarge">Post JOBS</a>
-				<a href="/jobs/" class="w3-button w3-round w3-theme w3-margin w3-xlarge">Find JOBS</a>
-			</div>
-		</div>
-		<!-- hero banner for tablet & computer -->
-		<div class="hero-image w3-padding-16 w3-hide-large w3-hide-medium" style="background-image: linear-gradient({{.Site.Params.theme.opaque}}, {{.Site.Params.theme.translucent}}), url({{.Site.Params.coverImage}});">
-			<div class="hero-text">
-				<p class="w3-small">{{.Site.Params.description}}</p>
-				<h3>{{.Site.Title}}</h3>
-				<a href="{{.Site.Params.postJobForm}}" target="_blank" class="w3-button w3-round w3-theme-l5 w3-margin">Post JOBS</a>
-				<a href="/jobs/" class="w3-button w3-round w3-theme w3-margin">Find JOBS</a>
-			</div>
-		</div>
+{{ define "main" }}
 
-		<!-- contents -->
-		<div class="w3-container content">
-
-			<!-- Job list -->
-			<div class="job-list">
-				<div class="w3-display-container">
-					<h1>Openings</h1>
-					<a href="/jobs/" class="w3-btn w3-circle w3-xlarge w3-theme w3-display-right"><span class="fa fa-arrow-right"></span></a>
-				</div>
-				{{ range .Paginator.Pages }}
-				<div class="w3-card w3-border w3-round-large w3-margin">
-					<div class="w3-display-container">
-						<div class="w3-large">{{.Title}}</div>
-						<a href="{{.RelPermalink}}" class="w3-btn w3-round w3-theme w3-display-right w3-hide-small">Apply</a>
+	<!-- Job list -->
+	<div class="job-list">
+		<div class="w3-display-container">
+			<h1>Openings</h1>
+			<a href="/jobs/" class="w3-btn w3-circle w3-xlarge w3-theme w3-display-right"><span class="fa fa-arrow-right"></span></a>
+		</div>
+		{{ range where .Paginator.Pages "Section" "jobs" }}
+		<div class="w3-card w3-border w3-round-large w3-margin">
+			<div class="w3-display-container">
+				<div class="w3-large">{{.Title}}</div>
+				<a href="{{.RelPermalink}}" class="w3-btn w3-round w3-theme w3-display-right w3-hide-small">Apply</a>
+			</div>
+			<div class="w3-section"></div>
+			<div class="w3-row-padding">
+				{{ if .Params.salary }}
+					<div class="w3-col s12 m3 w3-tiny">
+						<span class="fas fa-rupee-sign"></span> {{ .Params.salary }}
 					</div>
-					<div class="w3-section"></div>
-					<div class="w3-row-padding">
-						{{ if .Params.salary }}
-							<div class="w3-col s12 m3 w3-tiny">
-								<span class="fas fa-rupee-sign"></span> {{ .Params.salary }}
-							</div>
-						{{ end }}
-						{{ if .Params.locations }}
-							<div class="w3-col s12 m3 w3-tiny">
-								<span class="fas fa-globe-asia"></span>
-								{{ range (.GetTerms "locations")}}
-									<a href="{{ .RelPermalink }}" class="w3-tag w3-theme w3-round">{{ .LinkTitle}}</a>
-								{{end}}
-							</div>
-						{{ end }}
+				{{ end }}
+				{{ if .Params.locations }}
+					<div class="w3-col s12 m3 w3-tiny">
+						<span class="fas fa-globe-asia"></span>
+						{{ range (.GetTerms "locations")}}
+							<a href="{{ .RelPermalink }}" class="w3-tag w3-theme w3-round">{{ .LinkTitle}}</a>
+						{{end}}
 					</div>
-					<a href="{{.RelPermalink}}" class="w3-btn w3-round w3-block w3-theme w3-tiny w3-hide-medium w3-hide-large">Apply</a>
-				</div>
 				{{ end }}
 			</div>
+			<a href="{{.RelPermalink}}" class="w3-btn w3-round w3-block w3-theme w3-tiny w3-hide-medium w3-hide-large">Apply</a>
+		</div>
+		{{ end }}
+	</div>
 
-			<!-- Client List -->
-			<div class="companies">
-				<div class="w3-display-container">
-					<h1>Our Valuable Clients</h1>
-				</div>
-				<div class="swiper-container" style="height: 252px;">
-					<div class="swiper-wrapper">
-					{{ range .Site.Params.clients }}
-						<div class="swiper-slide">
-							<div class="w3-container w3-padding-16">
-								<div class="w3-card" style="background-image: url({{.image}})">
-									<div class="w3-container w3-theme-d1 w3-small"><p>{{upper .title}}</p></div>
-								</div>
-							</div>
+	<!-- Client List -->
+	<div class="companies">
+		<div class="w3-display-container">
+			<h1>Our Valuable Clients</h1>
+		</div>
+		<div class="swiper-container" style="height: 252px;">
+			<div class="swiper-wrapper">
+			{{ range .Site.Params.clients }}
+				<div class="swiper-slide">
+					<div class="w3-container w3-padding-16">
+						<div class="w3-card" style="background-image: url({{.image}})">
+							<div class="w3-container w3-theme-d1 w3-small"><p>{{upper .title}}</p></div>
 						</div>
-					{{ end }}
 					</div>
-					<div class="swiper-pagination"></div>
 				</div>
+			{{ end }}
 			</div>
-			<div class="core-values">
-				<div class="w3-display-container">
-					<h1>Core Values</h1>
-				</div>
-				<div class="w3-row">
-					<div class="w3-col s12 m4 w3-container w3-padding-16">
-						<h4>Easily Apply &amp; Updates</h4>
-						<p>
-							Apply with us easily and get latest jobs updates everyday 
-							download our Android App <a href="http://bit.ly/2VpJOgm">Click Here</a></p>
-					</div>
-					<div class="w3-col s12 m4 w3-container w3-padding-16">
-						<h4>24/7 Live Support</h4>
-						<p>Get 24/7  Live Assistance On Jobs/Carrier Updates</p>
-					</div>
-					<div class="w3-col s12 m4 w3-container w3-padding-16">
-						<h4>Find Jobs/Employee</h4>
-						<p>
-							We have 5000+ Active Candidates  
-							10+ Happy Recruiters.
-							Find free jobs or employee all over India.</p>
-					</div>
-				</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+	<div class="core-values">
+		<div class="w3-display-container">
+			<h1>Core Values</h1>
+		</div>
+		<div class="w3-row">
+			<div class="w3-col s12 m4 w3-container w3-padding-16">
+				<h4>Easily Apply &amp; Updates</h4>
+				<p>
+					Apply with us easily and get latest jobs updates everyday 
+					download our Android App <a href="http://bit.ly/2VpJOgm">Click Here</a></p>
+			</div>
+			<div class="w3-col s12 m4 w3-container w3-padding-16">
+				<h4>24/7 Live Support</h4>
+				<p>Get 24/7  Live Assistance On Jobs/Carrier Updates</p>
+			</div>
+			<div class="w3-col s12 m4 w3-container w3-padding-16">
+				<h4>Find Jobs/Employee</h4>
+				<p>
+					We have 5000+ Active Candidates  
+					10+ Happy Recruiters.
+					Find free jobs or employee all over India.</p>
 			</div>
 		</div>
+	</div>
 
-<script>
-	$(document).ready(function () {
-	  var mySwiper = new Swiper ('.swiper-container', {
-	    loop: true,
-	    updateOnWindowResize: true,
-		breakpoints: {
-			320: {
-				slidesPerView: 1
-			},
-			480: {
-				slidesPerView: 2
-			},
-			600: {
-				slidesPerView: 3
-			}
-		},
-		speed: 1000,
-		autoplay: {
-			delay: 2000
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			type: 'progressbar' //bullets, progressbar, fraction
-		}
-	  });
-	  mySwiper.init();
-	});
-</script>
-
-
-	<!-- footer -->
-	{{ partial "footer.html" . }}
-	</body>
-</html>
+{{ end }}
