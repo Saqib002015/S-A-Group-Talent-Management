@@ -1,5 +1,5 @@
 ---
-title: We're hiring for the AR associates for U.S Health Care.
+title: We're hiring for the AR associates for U.S Health Care
 description: JOB Description - Expertise in accounts of Insurance or US health
   care background.
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: We're Hiring for Airtel Premium Process.
+title: We're Hiring for Airtel Premium Process
 description: We're Hiring for Airtel Premium Process.
 draft: false
 date: 2020-08-13T19:21:14.744Z

@@ -1,5 +1,5 @@
 ---
-title: Urgent Requirement for Business Development Executive/Manager.
+title: Urgent Requirement for Business Development Executive/Manager
 description: N/A
 draft: false
 date: 2020-06-15T18:01:15.599Z

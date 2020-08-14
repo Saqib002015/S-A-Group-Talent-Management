@@ -1,5 +1,5 @@
 ---
-title: We're hiring for the Dish Tv process - Work from Home.
+title: We're hiring for the Dish Tv process - Work from Home
 description: Work From Home
 draft: false
 date: 2020-05-18T17:53:42.297Z

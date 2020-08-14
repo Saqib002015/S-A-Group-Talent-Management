@@ -1,5 +1,5 @@
 ---
-title: We're Hiring for IDFC First Banking process.
+title: We're Hiring for IDFC First Banking process
 description: Work from Office
 draft: false
 date: 2020-07-03T15:27:56.257Z

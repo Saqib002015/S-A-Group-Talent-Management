@@ -1,5 +1,5 @@
 ---
-title: We're hiring for Max Life Insurance Sales Associates.
+title: We're hiring for Max Life Insurance Sales Associates
 description: We're hiring for Max Life Insurance Sales Associates.
 draft: false
 date: 2020-07-31T13:07:47.235Z
