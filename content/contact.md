@@ -6,7 +6,7 @@ draft: false
 
 # Contact
 
-S.A. Group Talent Management.
+# S.A. Group Talent Management.
 
 Address: Plot No-2 Near Bharat Gas Agency, Hapur - Modinagar Rd, Shastri Nagar Modinagar, India 201-204.
 
@@ -22,4 +22,4 @@ Download our Android App
 
 Click here - http://bit.ly/2VpJOgm
 
-Powerded By: Mr. Saqib Ali
+# Powerded By Mr. Saqib Ali
