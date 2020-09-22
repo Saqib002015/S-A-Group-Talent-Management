@@ -26,4 +26,4 @@ We're Against Any Fraud - We don't charge any Registration/Consultancy Fee.
 
 If you found someone kindly contact on Support@sagrouptalentmanagement.in
 
-# Powerded By Mr. Saqib Ali
+# Powered By S.A. Group Pvt Ltd (Group Of the Companies)
