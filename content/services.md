@@ -26,4 +26,4 @@ Manpower availability at all times
 Help Clients to concentrate on core areas                                                                                 
 Reducing internal hiring cost.
 
-# Powerded By Mr. Saqib Ali
+# Powered By S.A. Group Pvt Ltd (Group Of the Companies)
