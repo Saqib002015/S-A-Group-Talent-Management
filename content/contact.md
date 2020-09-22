@@ -22,4 +22,4 @@ Download our Android App
 
 Click here - http://bit.ly/2VpJOgm
 
-# Powerded By Mr. Saqib Ali
+# Powered By S.A. Group Pvt Ltd (Group Of the Companies)
